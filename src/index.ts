@@ -1,5 +1,9 @@
 #!/usr/bin/env node
+import { createRequire } from "node:module";
 import { Command } from "commander";
+
+const require = createRequire(import.meta.url);
+const { version } = require("../package.json") as { version: string };
 import { registerChannelCommands } from "./commands/channels.js";
 import { registerVideoCommands } from "./commands/videos.js";
 import { registerReportCommands } from "./commands/report.js";
@@ -10,7 +14,7 @@ const program = new Command();
 program
   .name("youtube-analytics-cli")
   .description("YouTube Analytics CLI for AI agents")
-  .version("1.0.0")
+  .version(version)
   .option("--format <format>", "Output format", "json")
   .option("--credentials <path>", "Path to credentials JSON file")
   .addHelpText(
