@@ -1,6 +1,6 @@
 # youtube-analytics-cli
 
-Give AI agents direct access to YouTube analytics and channel data. One command to authenticate, pull video stats, and run analytics reports -- no SDK, no docs to read, no tokens wasted on boilerplate.
+YouTube Analytics CLI for AI agents (and humans). Pull channel and video statistics, run analytics reports with flexible dimensions and filters, manage analytics groups, and more.
 
 **Works with:** OpenClaw, Claude Code, Cursor, Codex, and any agent that can run shell commands.
 
@@ -195,9 +195,11 @@ Errors are written to stderr as JSON with an `error` field and a non-zero exit c
 
 ## Related
 
-- [google-analytics-cli](https://github.com/Bin-Huang/google-analytics-cli) -- Google Analytics CLI for AI agents
-- [google-search-console-cli](https://github.com/Bin-Huang/google-search-console-cli) -- Google Search Console CLI for AI agents
-- [x-ads-cli](https://github.com/Bin-Huang/x-ads-cli) -- X Ads CLI for AI agents
+- [google-analytics-cli](https://github.com/Bin-Huang/google-analytics-cli) -- Google Analytics
+- [google-search-console-cli](https://github.com/Bin-Huang/google-search-console-cli) -- Google Search Console
+- [x-analytics-cli](https://github.com/Bin-Huang/x-analytics-cli) -- X Analytics
+- [x-ads-cli](https://github.com/Bin-Huang/x-ads-cli) -- X Ads
+- [meta-ads-open-cli](https://github.com/Bin-Huang/meta-ads-open-cli) -- Meta Ads
 
 ## License
 
