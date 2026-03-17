@@ -1,0 +1,59 @@
+#!/usr/bin/env node
+import { Command } from "commander";
+import { registerChannelCommands } from "./commands/channels.js";
+import { registerVideoCommands } from "./commands/videos.js";
+import { registerReportCommands } from "./commands/report.js";
+import { registerGroupCommands } from "./commands/groups.js";
+
+const program = new Command();
+
+program
+  .name("youtube-analytics-cli")
+  .description("YouTube Analytics CLI for AI agents")
+  .version("1.0.0")
+  .option("--format <format>", "Output format", "json")
+  .option("--credentials <path>", "Path to credentials JSON file")
+  .addHelpText(
+    "after",
+    "\nDocs: https://github.com/Bin-Huang/youtube-analytics-cli"
+  );
+
+program.configureOutput({
+  writeErr: (str: string) => {
+    const msg = str.replace(/^error: /i, "").trim();
+    if (msg) process.stderr.write(JSON.stringify({ error: msg }) + "\n");
+  },
+  writeOut: (str: string) => {
+    process.stdout.write(str);
+  },
+});
+
+program.showHelpAfterError(false);
+
+program.hook("preAction", () => {
+  const format = program.opts().format;
+  if (format !== "json" && format !== "compact") {
+    process.stderr.write(
+      JSON.stringify({ error: "Format must be 'json' or 'compact'." }) + "\n"
+    );
+    process.exit(1);
+  }
+});
+
+registerChannelCommands(program);
+registerVideoCommands(program);
+registerReportCommands(program);
+registerGroupCommands(program);
+
+program.on("command:*", (operands) => {
+  process.stderr.write(
+    JSON.stringify({ error: `Unknown command: ${operands[0]}. Run --help for available commands.` }) + "\n"
+  );
+  process.exit(1);
+});
+if (process.argv.length <= 2) {
+  program.outputHelp();
+  process.exit(0);
+}
+
+program.parse();
