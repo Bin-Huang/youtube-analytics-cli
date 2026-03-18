@@ -10,11 +10,7 @@ YouTube Analytics CLI for AI agents (and humans). Pull channel and video statist
 npm install -g youtube-analytics-cli
 ```
 
-Or run directly with npx:
-
-```bash
-npx youtube-analytics-cli --help
-```
+Or run directly: `npx youtube-analytics-cli --help`
 
 ## How it works
 
