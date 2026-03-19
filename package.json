@@ -1,6 +1,6 @@
 {
   "name": "youtube-analytics-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "YouTube Analytics CLI for AI agents",
   "type": "module",
   "bin": {
