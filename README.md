@@ -52,6 +52,7 @@ For analytics reports and private channel data:
 4. Use the [OAuth 2.0 Playground](https://developers.google.com/oauthplayground/) or your own flow to obtain a refresh token with the required scopes:
    - `https://www.googleapis.com/auth/youtube.readonly`
    - `https://www.googleapis.com/auth/yt-analytics.readonly`
+   - `https://www.googleapis.com/auth/yt-analytics-monetary.readonly`
 
 > **Note:** Service accounts do NOT work with YouTube APIs. You must use OAuth 2.0 with a refresh token.
 
@@ -167,6 +168,7 @@ youtube-analytics-cli groups --id GROUP_ID
 
 Options:
 - `--id <id>` -- retrieve specific group(s) by ID (comma-separated)
+- `--next-page-token <token>` -- pagination token for next page of results
 
 ### group-items
 
@@ -175,6 +177,9 @@ List items in a YouTube Analytics group. Requires OAuth.
 ```bash
 youtube-analytics-cli group-items GROUP_ID
 ```
+
+Options:
+- `--next-page-token <token>` -- pagination token for next page of results
 
 ## Error output
 
