@@ -6,8 +6,17 @@ YouTube Analytics CLI for AI agents (and humans). Pull channel and video statist
 
 ## Installation
 
+Tell your AI agent (e.g. OpenClaw):
+
+> Install the CLI and skills from https://github.com/Bin-Huang/youtube-analytics-cli
+
+Or install manually:
+
 ```bash
 npm install -g youtube-analytics-cli
+
+# Add skills for AI agents (Claude Code, Cursor, Codex, etc.)
+npx skills add Bin-Huang/youtube-analytics-cli
 ```
 
 Or run directly: `npx youtube-analytics-cli --help`
