@@ -8,7 +8,7 @@ YouTube Analytics CLI for AI agents (and humans). Pull channel and video statist
 
 Tell your AI agent (e.g. OpenClaw):
 
-> Install the CLI and skills from https://github.com/Bin-Huang/youtube-analytics-cli
+> Install this CLI and skills from https://github.com/Bin-Huang/youtube-analytics-cli
 
 Or install manually:
 
